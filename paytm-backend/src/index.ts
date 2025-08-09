@@ -10,7 +10,9 @@ app.use(cors())
 app.use(express.json())
 app.use('/api/v1',router)
 
-
+app.get("/",(req,res)=>{
+    res.redirect("http://localhost:5173/signin")
+})
  function main(){
  mongoose.connect(process.env.MONGO_URL!).then(()=>{console.log("mongo connected")})
     app.listen(3000)
